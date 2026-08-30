@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="DBBroker/DBBroker.csproj" />
+  <Project Path="Klijent/Klijent.csproj" />
+  <Project Path="Server/Server.csproj" />
+  <Project Path="SistemskeOperacije/SistemskeOperacije.csproj" />
+  <Project Path="Zajednicki/Zajednicki.csproj" />
+</Solution>
