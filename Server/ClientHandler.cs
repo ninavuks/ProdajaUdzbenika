@@ -63,37 +63,71 @@ namespace Server
                         Kontroler.Instance.ObrisiUdzbenik(serializer.ReadType<Udzbenik>(zahtev.Objekat));
                         break;
                     case Operacija.VratiListuSviOsnovnaSkola:
-                        odgovor.Objekat = Kontroler.Instance.VratiListuSviOsnovnaSkola(); break;
+                        odgovor.Objekat = Kontroler.Instance.VratiListuSviOsnovnaSkola(); 
+                        break;
                     case Operacija.KreirajOsnovnaSkola:
-                        odgovor.Objekat = Kontroler.Instance.KreirajOsnovnaSkola(serializer.ReadType<OsnovnaSkola>(zahtev.Objekat)); break;
+                        odgovor.Objekat = Kontroler.Instance.KreirajOsnovnaSkola(serializer.ReadType<OsnovnaSkola>(zahtev.Objekat)); 
+                        break;
                     case Operacija.PretraziOsnovnaSkola:
-                        odgovor.Objekat = Kontroler.Instance.PretraziOsnovnaSkola(serializer.ReadType<OsnovnaSkola>(zahtev.Objekat)); break;
+                        odgovor.Objekat = Kontroler.Instance.PretraziOsnovnaSkola(serializer.ReadType<OsnovnaSkola>(zahtev.Objekat)); 
+                        break;
                     case Operacija.PromeniOsnovnaSkola:
-                        Kontroler.Instance.PromeniOsnovnaSkola(serializer.ReadType<OsnovnaSkola>(zahtev.Objekat)); break;
+                        Kontroler.Instance.PromeniOsnovnaSkola(serializer.ReadType<OsnovnaSkola>(zahtev.Objekat)); 
+                        break;
                     case Operacija.ObrisiOsnovnaSkola:
-                        Kontroler.Instance.ObrisiOsnovnaSkola(serializer.ReadType<OsnovnaSkola>(zahtev.Objekat)); break;
+                        Kontroler.Instance.ObrisiOsnovnaSkola(serializer.ReadType<OsnovnaSkola>(zahtev.Objekat)); 
+                        break;
 
                     case Operacija.VratiListuSviObuka:
-                        odgovor.Objekat = Kontroler.Instance.VratiListuSviObuka(); break;
+                        odgovor.Objekat = Kontroler.Instance.VratiListuSviObuka(); 
+                        break;
                     case Operacija.KreirajObuka:
-                        odgovor.Objekat = Kontroler.Instance.KreirajObuka(serializer.ReadType<Obuka>(zahtev.Objekat)); break;
+                        odgovor.Objekat = Kontroler.Instance.KreirajObuka(serializer.ReadType<Obuka>(zahtev.Objekat)); 
+                        break;
                     case Operacija.PretraziObuka:
                         odgovor.Objekat = Kontroler.Instance.PretraziObuka(serializer.ReadType<Obuka>(zahtev.Objekat)); break;
                     case Operacija.PromeniObuka:
-                        Kontroler.Instance.PromeniObuka(serializer.ReadType<Obuka>(zahtev.Objekat)); break;
+                        Kontroler.Instance.PromeniObuka(serializer.ReadType<Obuka>(zahtev.Objekat)); 
+                        break;
                     case Operacija.ObrisiObuka:
-                        Kontroler.Instance.ObrisiObuka(serializer.ReadType<Obuka>(zahtev.Objekat)); break;
+                        Kontroler.Instance.ObrisiObuka(serializer.ReadType<Obuka>(zahtev.Objekat)); 
+                        break;
 
                     case Operacija.VratiListuSviProdavac:
-                        odgovor.Objekat = Kontroler.Instance.VratiListuSviProdavac(); break;
+                        odgovor.Objekat = Kontroler.Instance.VratiListuSviProdavac(); 
+                        break;
                     case Operacija.KreirajProdavac:
-                        odgovor.Objekat = Kontroler.Instance.KreirajProdavac(serializer.ReadType<Prodavac>(zahtev.Objekat)); break;
+                        odgovor.Objekat = Kontroler.Instance.KreirajProdavac(serializer.ReadType<Prodavac>(zahtev.Objekat)); 
+                        break;
                     case Operacija.PretraziProdavac:
-                        odgovor.Objekat = Kontroler.Instance.PretraziProdavac(serializer.ReadType<Prodavac>(zahtev.Objekat)); break;
+                        odgovor.Objekat = Kontroler.Instance.PretraziProdavac(serializer.ReadType<Prodavac>(zahtev.Objekat)); 
+                        break;
                     case Operacija.PromeniProdavac:
-                        Kontroler.Instance.PromeniProdavac(serializer.ReadType<Prodavac>(zahtev.Objekat)); break;
+                        Kontroler.Instance.PromeniProdavac(serializer.ReadType<Prodavac>(zahtev.Objekat)); 
+                        break;
                     case Operacija.ObrisiProdavac:
-                        Kontroler.Instance.ObrisiProdavac(serializer.ReadType<Prodavac>(zahtev.Objekat)); break;
+                        Kontroler.Instance.ObrisiProdavac(serializer.ReadType<Prodavac>(zahtev.Objekat)); 
+                        break;
+
+                    case Operacija.VratiListuSviKupac:
+                        odgovor.Objekat = Kontroler.Instance.VratiListuSviKupac(); 
+                        break;
+                    case Operacija.KreirajKupac:
+                        odgovor.Objekat = Kontroler.Instance.KreirajKupac(serializer.ReadType<Kupac>(zahtev.Objekat)); 
+                        break;
+                    case Operacija.PretraziKupac:
+                        odgovor.Objekat = Kontroler.Instance.PretraziKupac(serializer.ReadType<Kupac>(zahtev.Objekat)); 
+                        break;
+                    case Operacija.PromeniKupac:
+                        Kontroler.Instance.PromeniKupac(serializer.ReadType<Kupac>(zahtev.Objekat)); 
+                        break;
+                    case Operacija.ObrisiKupac:
+                        Kontroler.Instance.ObrisiKupac(serializer.ReadType<Kupac>(zahtev.Objekat)); 
+                        break;
+                    case Operacija.PrijaviProdavac:
+                        Prodavac kriterijumPrijava = serializer.ReadType<Prodavac>(zahtev.Objekat);
+                        odgovor.Objekat = Kontroler.Instance.PrijaviProdavac(kriterijumPrijava.KorisnickoIme, kriterijumPrijava.Sifra);
+                        break;
                 }
             }
             catch (Exception ex)

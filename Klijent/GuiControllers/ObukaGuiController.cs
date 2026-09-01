@@ -40,7 +40,7 @@ namespace Klijent.GuiControllers
         {
             if (string.IsNullOrWhiteSpace(uc.TxtNaziv.Text) || string.IsNullOrWhiteSpace(uc.TxtMesto.Text))
             {
-                MessageBox.Show("Naziv i mesto moraju biti popunjeni!");
+                MessageBox.Show("Naziv i mesto moraju biti popunjeni.");
                 return null;
             }
             return new Obuka { Naziv = uc.TxtNaziv.Text, Mesto = uc.TxtMesto.Text };

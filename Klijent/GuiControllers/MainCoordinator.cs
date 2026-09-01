@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zajednicki.Domen;
 
 namespace Klijent.GuiControllers
 {
@@ -10,12 +11,16 @@ namespace Klijent.GuiControllers
     {
         private static MainCoordinator instance;
         public static MainCoordinator Instance
+
+
         {
             get { if (instance == null) instance = new MainCoordinator(); return instance; }
         }
         private MainCoordinator() { }
 
         private FrmGlavna frmGlavna;
+
+        internal Prodavac UlogovaniProdavac { get; private set; }
 
         internal void ShowUdzbenikPanel(object sender, EventArgs e)
         {
@@ -30,12 +35,19 @@ namespace Klijent.GuiControllers
                 Application.SetCompatibleTextRenderingDefault(false);
 
                 Komunikacija.Instance.Connect();
+
+                LoginFrm loginFrm = new LoginFrm();
+                if (loginFrm.ShowDialog() != DialogResult.OK)
+                    return;
+
+                UlogovaniProdavac = loginFrm.UlogovaniProdavac;
+
                 frmGlavna = new FrmGlavna();
                 Application.Run(frmGlavna);
             }
             catch (Exception)
             {
-                MessageBox.Show("Neuspešna konekcija sa serverom!");
+                MessageBox.Show("Neuspešna konekcija sa serverom.");
             }
         }
 
@@ -50,6 +62,11 @@ namespace Klijent.GuiControllers
         internal void ShowProdavacPanel(object sender, EventArgs e)
         { 
             frmGlavna.ChangePanel(ProdavacGuiController.Instance.CreatePanel()); 
+        }
+
+        internal void ShowKupacPanel(object sender, EventArgs e)
+        { 
+            frmGlavna.ChangePanel(KupacGuiController.Instance.CreatePanel()); 
         }
 
 

@@ -50,7 +50,7 @@ namespace Klijent.GuiControllers
                 string.IsNullOrWhiteSpace(uc.TxtIzdavac.Text) ||
                 !decimal.TryParse(uc.TxtCena.Text, out decimal cena))
             {
-                MessageBox.Show("Naziv, izdavač i cena moraju biti popunjeni ispravno!");
+                MessageBox.Show("Naziv, izdavač i cena moraju biti popunjeni ispravno.");
                 return null;
             }
 

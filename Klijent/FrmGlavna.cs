@@ -20,6 +20,7 @@ namespace Klijent
             osnovneSkoleToolStripMenuItem.Click += MainCoordinator.Instance.ShowOsnovnaSkolaPanel;
             obukeToolStripMenuItem.Click += MainCoordinator.Instance.ShowObukaPanel;
             prodavciToolStripMenuItem.Click += MainCoordinator.Instance.ShowProdavacPanel;
+            kupciToolStripMenuItem.Click += MainCoordinator.Instance.ShowKupacPanel;
         }
 
         public void ChangePanel(Control control)

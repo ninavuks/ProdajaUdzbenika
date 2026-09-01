@@ -12,7 +12,9 @@ namespace Server
     {
         private static Kontroler instance;
         public static Kontroler Instance{
-         get { if(instance == null) instance = new Kontroler(); return instance; }
+         get { if(instance == null) instance = new Kontroler(); 
+         return instance; 
+         }
         }
 
         private Kontroler() { }
@@ -131,6 +133,42 @@ namespace Server
         { 
             var so = new ObrisiProdavacSO(p); 
             so.ExecuteTemplate(); 
+        }
+
+        internal List<Kupac> VratiListuSviKupac()
+        { 
+            var so = new VratiListuSviKupacSO(); 
+            so.ExecuteTemplate(); 
+            return so.Rezultat; 
+        }
+        internal Kupac KreirajKupac(Kupac k)
+        { 
+            var so = new KreirajKupacSO(k); 
+            so.ExecuteTemplate(); 
+            return so.Rezultat; 
+        }
+        internal List<Kupac> PretraziKupac(Kupac kriterijum)
+        { 
+            var so = new PretraziKupacSO(kriterijum); 
+            so.ExecuteTemplate(); 
+            return so.Rezultat; 
+        }
+        internal void PromeniKupac(Kupac k)
+        { 
+            var so = new PromeniKupacSO(k); 
+            so.ExecuteTemplate(); 
+        }
+        internal void ObrisiKupac(Kupac k)
+        { 
+            var so = new ObrisiKupacSO(k); 
+            so.ExecuteTemplate(); 
+        }
+
+        internal Prodavac PrijaviProdavac(string korisnickoIme, string sifra)
+        {
+            var so = new PrijaviProdavacSO(korisnickoIme, sifra);
+            so.ExecuteTemplate();
+            return so.Rezultat;
         }
     }
 }

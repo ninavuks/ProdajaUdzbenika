@@ -175,5 +175,49 @@ namespace Klijent
             var o = serializer.Receive<Odgovor>();
             if (!o.Uspesno) throw new Exception(o.Greska);
         }
+
+        internal List<Kupac> VratiListuSviKupac()
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.VratiListuSviKupac });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+            return serializer.ReadType<List<Kupac>>(o.Objekat);
+        }
+        internal Kupac KreirajKupac(Kupac k)
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.KreirajKupac, Objekat = k });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+            return serializer.ReadType<Kupac>(o.Objekat);
+        }
+        internal List<Kupac> PretraziKupac(Kupac kriterijum)
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.PretraziKupac, Objekat = kriterijum });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+            return serializer.ReadType<List<Kupac>>(o.Objekat);
+        }
+        internal void PromeniKupac(Kupac k)
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.PromeniKupac, Objekat = k });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+        }
+        internal void ObrisiKupac(Kupac k)
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.ObrisiKupac, Objekat = k });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+        }
+
+        internal Prodavac PrijaviProdavac(string korisnickoIme, string sifra)
+        {
+            var kriterijum = new Prodavac { KorisnickoIme = korisnickoIme, Sifra = sifra };
+            serializer.Send(new Zahtev { Operacija = Operacija.PrijaviProdavac, Objekat = kriterijum });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) 
+                throw new Exception(o.Greska);
+                return serializer.ReadType<Prodavac>(o.Objekat);
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace Klijent.GuiControllers
                 string.IsNullOrWhiteSpace(uc.TxtKorisnickoIme.Text) ||
                 uc.TxtSifra.Text.Length <= 6)
             {
-                MessageBox.Show("Sva polja moraju biti popunjena, a šifra mora imati više od 6 karaktera!");
+                MessageBox.Show("Sva polja moraju biti popunjena, šifra mora imati više od 6 karaktera.");
                 return null;
             }
             return new Prodavac
@@ -83,7 +83,7 @@ namespace Klijent.GuiControllers
 
         private void Obrisi(object sender, EventArgs e)
         {
-            if (izabranId == 0) { MessageBox.Show("Prvo izaberi red u tabeli."); return; }
+            if (izabranId == 0) { MessageBox.Show("Prvo izabrati red u tabeli."); return; }
             try
             {
                 Komunikacija.Instance.ObrisiProdavac(new Prodavac { Id = izabranId });

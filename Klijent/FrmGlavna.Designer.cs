@@ -18,23 +18,20 @@
             osnovneSkoleToolStripMenuItem = new ToolStripMenuItem();
             obukeToolStripMenuItem = new ToolStripMenuItem();
             prodavciToolStripMenuItem = new ToolStripMenuItem();
+            kupciToolStripMenuItem = new ToolStripMenuItem();
 
             pnlGlavni = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuStrip1
-            // 
+             
             menuStrip1.BackColor = Color.LightSteelBlue;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { sifarniciToolStripMenuItem, prodavciToolStripMenuItem }); 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { sifarniciToolStripMenuItem, prodavciToolStripMenuItem, kupciToolStripMenuItem }); 
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(900, 28);
             menuStrip1.TabIndex = 1;
-            // 
-            // sifarniciToolStripMenuItem
-            // 
+             
             sifarniciToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             udzbeniciToolStripMenuItem, osnovneSkoleToolStripMenuItem, obukeToolStripMenuItem});
             osnovneSkoleToolStripMenuItem.Text = "Osnovne škole";
@@ -42,30 +39,30 @@
             sifarniciToolStripMenuItem.Name = "sifarniciToolStripMenuItem";
             sifarniciToolStripMenuItem.Size = new Size(76, 24);
             sifarniciToolStripMenuItem.Text = "Šifarnici";
-            // 
-            // udzbeniciToolStripMenuItem
-            // 
+             
             udzbeniciToolStripMenuItem.Name = "udzbeniciToolStripMenuItem";
             udzbeniciToolStripMenuItem.Size = new Size(158, 26);
             udzbeniciToolStripMenuItem.Text = "Udžbenici";
-            // 
-            // prodavciToolStripMenuItem
-            // 
+             
             prodavciToolStripMenuItem.Name = "prodavciToolStripMenuItem";      
             prodavciToolStripMenuItem.Size = new Size(90, 24);                 
-            prodavciToolStripMenuItem.Text = "Prodavci";                     
-            // 
+            prodavciToolStripMenuItem.Text = "Prodavci";
+
+            kupciToolStripMenuItem.Name = "kupciToolStripMenuItem";
+            kupciToolStripMenuItem.Size = new Size(90, 24);
+            kupciToolStripMenuItem.Text = "Kupci";
+            
             // pnlGlavni
-            // 
+             
             pnlGlavni.BackColor = Color.LightSteelBlue;
             pnlGlavni.Dock = DockStyle.Fill;
             pnlGlavni.Location = new Point(0, 28);
             pnlGlavni.Name = "pnlGlavni";
             pnlGlavni.Size = new Size(900, 622);
             pnlGlavni.TabIndex = 0;
-            // 
+            
             // FrmGlavna
-            // 
+             
             ClientSize = new Size(900, 650);
             Controls.Add(pnlGlavni);
             Controls.Add(menuStrip1);
@@ -83,7 +80,9 @@
         private ToolStripMenuItem udzbeniciToolStripMenuItem;
         private ToolStripMenuItem osnovneSkoleToolStripMenuItem;  
         private ToolStripMenuItem obukeToolStripMenuItem;          
-        private ToolStripMenuItem prodavciToolStripMenuItem;      
+        private ToolStripMenuItem prodavciToolStripMenuItem;
+
+        private ToolStripMenuItem kupciToolStripMenuItem;
         private Panel pnlGlavni;
     }
 }

@@ -41,7 +41,7 @@ namespace Klijent.GuiControllers
         {
             if (string.IsNullOrWhiteSpace(uc.TxtNaziv.Text) || string.IsNullOrWhiteSpace(uc.TxtEmail.Text))
             {
-                MessageBox.Show("Naziv i email moraju biti popunjeni!");
+                MessageBox.Show("Naziv i email moraju biti popunjeni.");
                 return null;
             }
             return new OsnovnaSkola { Naziv = uc.TxtNaziv.Text, Email = uc.TxtEmail.Text };
@@ -73,7 +73,7 @@ namespace Klijent.GuiControllers
 
         private void Obrisi(object sender, EventArgs e)
         {
-            if (izabranId == 0) { MessageBox.Show("Prvo izaberi red u tabeli."); return; }
+            if (izabranId == 0) { MessageBox.Show("Prvo izabrati red u tabeli."); return; }
             try
             {
                 Komunikacija.Instance.ObrisiOsnovnaSkola(new OsnovnaSkola { Id = izabranId });
