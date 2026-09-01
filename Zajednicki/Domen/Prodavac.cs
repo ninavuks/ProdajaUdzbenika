@@ -16,6 +16,8 @@ namespace Zajednicki.Domen
         public string KorisnickoIme { get; set; }
         public string Sifra { get; set; }
 
+        public string PunoIme => $"{Ime} {Prezime}";
+
         public string TableName => "Prodavac";
         public string Values => $"'{Ime}', '{Prezime}', '{KorisnickoIme}', '{Sifra}'";
         public string UpdateValues =>

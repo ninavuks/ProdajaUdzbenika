@@ -20,6 +20,8 @@ namespace Zajednicki.Komunikacija
 
         VratiListuSviOsnovnaSkola, KreirajOsnovnaSkola, PretraziOsnovnaSkola, PromeniOsnovnaSkola, ObrisiOsnovnaSkola,
          
-        VratiListuSviKupac, KreirajKupac, PretraziKupac, PromeniKupac, ObrisiKupac, 
+        VratiListuSviKupac, KreirajKupac, PretraziKupac, PromeniKupac, ObrisiKupac,
+
+        VratiListuSviRacun, KreirajRacunSaStavkama, PretraziRacun, PromeniRacun, VratiListuStavkaRacunaZaRacun,
     }
 }

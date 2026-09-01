@@ -21,6 +21,7 @@ namespace Klijent
             obukeToolStripMenuItem.Click += MainCoordinator.Instance.ShowObukaPanel;
             prodavciToolStripMenuItem.Click += MainCoordinator.Instance.ShowProdavacPanel;
             kupciToolStripMenuItem.Click += MainCoordinator.Instance.ShowKupacPanel;
+            racuniToolStripMenuItem.Click += MainCoordinator.Instance.ShowRacunPanel;
         }
 
         public void ChangePanel(Control control)

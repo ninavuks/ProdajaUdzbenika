@@ -41,6 +41,10 @@ namespace DBBroker
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = $"insert into {entity.TableName} values({entity.Values}); select SCOPE_IDENTITY();";
             object rezultat = cmd.ExecuteScalar();
+
+            if (rezultat == null || rezultat == DBNull.Value)
+                return 0;
+
             return Convert.ToInt32(rezultat);
         }
 

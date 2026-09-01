@@ -16,6 +16,8 @@ namespace Zajednicki.Domen
          public decimal CenaUdzbenika { get; set; }
          public int Razred {  get; set; }
 
+        public string PunNaziv => $"{Naziv} {Razred} {Izdavac}";
+
         public string TableName => "Udzbenik";
 
         public string Values => $"'{Naziv}', '{Izdavac}', {CenaUdzbenika.ToString(CultureInfo.InvariantCulture)}, {Razred}";

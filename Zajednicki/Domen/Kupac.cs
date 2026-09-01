@@ -15,6 +15,8 @@ namespace Zajednicki.Domen
         public string Email { get; set; }
         public int IdOsnovnaSkola { get; set; }
 
+        public string PunoIme => $"{Ime} {Prezime}";
+
         public string TableName => "Kupac";
         public string Values => $"'{Ime}', '{Prezime}', '{Email}', {IdOsnovnaSkola}";
         public string UpdateValues =>

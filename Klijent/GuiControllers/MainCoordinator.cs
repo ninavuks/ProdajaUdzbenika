@@ -69,6 +69,9 @@ namespace Klijent.GuiControllers
             frmGlavna.ChangePanel(KupacGuiController.Instance.CreatePanel()); 
         }
 
-
+        internal void ShowRacunPanel(object sender, EventArgs e)
+        { 
+            frmGlavna.ChangePanel(RacunGuiController.Instance.CreatePanel()); 
+        }
     }
 }

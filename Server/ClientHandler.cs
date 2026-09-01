@@ -128,6 +128,23 @@ namespace Server
                         Prodavac kriterijumPrijava = serializer.ReadType<Prodavac>(zahtev.Objekat);
                         odgovor.Objekat = Kontroler.Instance.PrijaviProdavac(kriterijumPrijava.KorisnickoIme, kriterijumPrijava.Sifra);
                         break;
+
+                    case Operacija.VratiListuSviRacun:
+                        odgovor.Objekat = Kontroler.Instance.VratiListuSviRacun(); 
+                        break;
+                    case Operacija.KreirajRacunSaStavkama:
+                        odgovor.Objekat = Kontroler.Instance.KreirajRacunSaStavkama(serializer.ReadType<RacunSaStavkama>(zahtev.Objekat)); 
+                        break;
+                    case Operacija.PretraziRacun:
+                        odgovor.Objekat = Kontroler.Instance.PretraziRacun(serializer.ReadType<Racun>(zahtev.Objekat)); 
+                        break;
+                    case Operacija.PromeniRacun:
+                        Kontroler.Instance.PromeniRacun(serializer.ReadType<Racun>(zahtev.Objekat)); 
+                        break;
+                    case Operacija.VratiListuStavkaRacunaZaRacun:
+                        Racun racunKriterijum = serializer.ReadType<Racun>(zahtev.Objekat);
+                        odgovor.Objekat = Kontroler.Instance.VratiListuStavkaRacunaZaRacun(racunKriterijum.Id);
+                        break;
                 }
             }
             catch (Exception ex)

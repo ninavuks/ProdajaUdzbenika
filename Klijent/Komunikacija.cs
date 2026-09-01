@@ -219,5 +219,40 @@ namespace Klijent
                 throw new Exception(o.Greska);
                 return serializer.ReadType<Prodavac>(o.Objekat);
         }
+
+        internal List<Racun> VratiListuSviRacun()
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.VratiListuSviRacun });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+            return serializer.ReadType<List<Racun>>(o.Objekat);
+        }
+        internal Racun KreirajRacunSaStavkama(RacunSaStavkama paket)
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.KreirajRacunSaStavkama, Objekat = paket });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+            return serializer.ReadType<Racun>(o.Objekat);
+        }
+        internal List<Racun> PretraziRacun(Racun kriterijum)
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.PretraziRacun, Objekat = kriterijum });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+            return serializer.ReadType<List<Racun>>(o.Objekat);
+        }
+        internal void PromeniRacun(Racun racun)
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.PromeniRacun, Objekat = racun });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+        }
+        internal List<StavkaRacuna> VratiListuStavkaRacunaZaRacun(int idRacun)
+        {
+            serializer.Send(new Zahtev { Operacija = Operacija.VratiListuStavkaRacunaZaRacun, Objekat = new Racun { Id = idRacun } });
+            var o = serializer.Receive<Odgovor>();
+            if (!o.Uspesno) throw new Exception(o.Greska);
+            return serializer.ReadType<List<StavkaRacuna>>(o.Objekat);
+        }
     }
 }

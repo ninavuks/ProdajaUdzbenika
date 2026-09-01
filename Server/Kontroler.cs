@@ -170,5 +170,35 @@ namespace Server
             so.ExecuteTemplate();
             return so.Rezultat;
         }
+
+        internal List<Racun> VratiListuSviRacun()
+        { 
+            var so = new VratiListuSviRacunSO(); 
+            so.ExecuteTemplate(); 
+            return so.Rezultat; 
+        }
+        internal Racun KreirajRacunSaStavkama(RacunSaStavkama paket)
+        { 
+            var so = new KreirajRacunSaStavkamaSO(paket); 
+            so.ExecuteTemplate(); 
+            return so.Rezultat; 
+        }
+        internal List<Racun> PretraziRacun(Racun kriterijum)
+        { 
+            var so = new PretraziRacunSO(kriterijum); 
+            so.ExecuteTemplate(); 
+            return so.Rezultat; 
+        }
+        internal void PromeniRacun(Racun racun)
+        { 
+            var so = new PromeniRacunSO(racun);
+            so.ExecuteTemplate(); 
+        }
+        internal List<StavkaRacuna> VratiListuStavkaRacunaZaRacun(int idRacun)
+        {   
+            var so = new VratiListuStavkaRacunaZaRacunSO(idRacun); 
+            so.ExecuteTemplate(); 
+            return so.Rezultat; 
+        }
     }
 }
