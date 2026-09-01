@@ -17,6 +17,9 @@ namespace Klijent
         {
             InitializeComponent();
             udzbeniciToolStripMenuItem.Click += MainCoordinator.Instance.ShowUdzbenikPanel;
+            osnovneSkoleToolStripMenuItem.Click += MainCoordinator.Instance.ShowOsnovnaSkolaPanel;
+            obukeToolStripMenuItem.Click += MainCoordinator.Instance.ShowObukaPanel;
+            prodavciToolStripMenuItem.Click += MainCoordinator.Instance.ShowProdavacPanel;
         }
 
         public void ChangePanel(Control control)

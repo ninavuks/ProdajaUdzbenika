@@ -15,6 +15,10 @@
             menuStrip1 = new MenuStrip();
             sifarniciToolStripMenuItem = new ToolStripMenuItem();
             udzbeniciToolStripMenuItem = new ToolStripMenuItem();
+            osnovneSkoleToolStripMenuItem = new ToolStripMenuItem();
+            obukeToolStripMenuItem = new ToolStripMenuItem();
+            prodavciToolStripMenuItem = new ToolStripMenuItem();
+
             pnlGlavni = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -23,7 +27,7 @@
             // 
             menuStrip1.BackColor = Color.LightSteelBlue;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { sifarniciToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { sifarniciToolStripMenuItem, prodavciToolStripMenuItem }); 
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(900, 28);
@@ -31,7 +35,10 @@
             // 
             // sifarniciToolStripMenuItem
             // 
-            sifarniciToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { udzbeniciToolStripMenuItem });
+            sifarniciToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+            udzbeniciToolStripMenuItem, osnovneSkoleToolStripMenuItem, obukeToolStripMenuItem});
+            osnovneSkoleToolStripMenuItem.Text = "Osnovne škole";
+            obukeToolStripMenuItem.Text = "Obuke";
             sifarniciToolStripMenuItem.Name = "sifarniciToolStripMenuItem";
             sifarniciToolStripMenuItem.Size = new Size(76, 24);
             sifarniciToolStripMenuItem.Text = "Šifarnici";
@@ -41,6 +48,12 @@
             udzbeniciToolStripMenuItem.Name = "udzbeniciToolStripMenuItem";
             udzbeniciToolStripMenuItem.Size = new Size(158, 26);
             udzbeniciToolStripMenuItem.Text = "Udžbenici";
+            // 
+            // prodavciToolStripMenuItem
+            // 
+            prodavciToolStripMenuItem.Name = "prodavciToolStripMenuItem";      
+            prodavciToolStripMenuItem.Size = new Size(90, 24);                 
+            prodavciToolStripMenuItem.Text = "Prodavci";                     
             // 
             // pnlGlavni
             // 
@@ -68,6 +81,9 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem sifarniciToolStripMenuItem;
         private ToolStripMenuItem udzbeniciToolStripMenuItem;
+        private ToolStripMenuItem osnovneSkoleToolStripMenuItem;  
+        private ToolStripMenuItem obukeToolStripMenuItem;          
+        private ToolStripMenuItem prodavciToolStripMenuItem;      
         private Panel pnlGlavni;
     }
 }

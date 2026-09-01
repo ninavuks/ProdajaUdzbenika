@@ -39,6 +39,19 @@ namespace Klijent.GuiControllers
             }
         }
 
+        internal void ShowOsnovnaSkolaPanel(object sender, EventArgs e)
+        { 
+            frmGlavna.ChangePanel(OsnovnaSkolaGuiController.Instance.CreatePanel()); 
+        }
+        internal void ShowObukaPanel(object sender, EventArgs e)
+        { 
+            frmGlavna.ChangePanel(ObukaGuiController.Instance.CreatePanel()); 
+        }
+        internal void ShowProdavacPanel(object sender, EventArgs e)
+        { 
+            frmGlavna.ChangePanel(ProdavacGuiController.Instance.CreatePanel()); 
+        }
+
 
     }
 }

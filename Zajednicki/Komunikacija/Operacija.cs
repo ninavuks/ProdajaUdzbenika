@@ -12,6 +12,12 @@ namespace Zajednicki.Komunikacija
         KreirajUdzbenik,
         PretraziUdzbenik,
         PromeniUdzbenik,
-        ObrisiUdzbenik
+        ObrisiUdzbenik,
+
+        VratiListuSviProdavac, KreirajProdavac, PretraziProdavac, PromeniProdavac, ObrisiProdavac,
+
+        VratiListuSviObuka, KreirajObuka, PretraziObuka, PromeniObuka, ObrisiObuka,
+
+        VratiListuSviOsnovnaSkola, KreirajOsnovnaSkola, PretraziOsnovnaSkola, PromeniOsnovnaSkola, ObrisiOsnovnaSkola,
     }
 }
